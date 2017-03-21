@@ -1,0 +1,42 @@
+{
+  "name": "unsplash-source-es6",
+  "version": "0.1",
+  "description": "A minimal ES6 ready Javascript wrapper for Unsplash Source API https://source.unsplash.com/",
+  "main": "lib/unsplash-source-es.js",
+  "scripts": {
+    "build": "webpack --env build",
+    "dev": "webpack --progress --colors --watch --env dev",
+    "test": "mocha --compilers js:babel-core/register --colors ./test/*.spec.js",
+    "test:watch": "mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js"
+  },
+  "devDependencies": {
+    "babel": "6.5.2",
+    "babel-core": "6.22.1",
+    "babel-eslint": "7.1.1",
+    "babel-loader": "6.2.10",
+    "babel-plugin-add-module-exports": "0.1.2",
+    "babel-preset-es2015": "6.22.0",
+    "chai": "3.4.1",
+    "eslint": "2.0",
+    "eslint-loader": "1.6.1",
+    "mocha": "2.3.4",
+    "webpack": "2.2.1",
+    "yargs": "6.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/divyanshu013/unsplash-source-es6.git"
+  },
+  "keywords": [
+    "unsplash",
+    "es6",
+    "wrapper",
+    "library"
+  ],
+  "author": "Divyanshu Maithani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/divyanshu013/unsplash-source-es6/issues"
+  },
+  "homepage": "https://github.com/divyanshu013/unsplash-source-es6"
+}
