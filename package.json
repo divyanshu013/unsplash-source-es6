@@ -2,7 +2,7 @@
   "name": "unsplash-source-es6",
   "version": "0.1",
   "description": "A minimal ES6 ready Javascript wrapper for Unsplash Source API https://source.unsplash.com/",
-  "main": "lib/unsplash-source-es.js",
+  "main": "lib/unsplash-source-es6.js",
   "scripts": {
     "build": "webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
