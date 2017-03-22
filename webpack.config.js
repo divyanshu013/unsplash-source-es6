@@ -5,7 +5,7 @@ const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 const path = require('path');
 const env = require('yargs').argv.env; // use --env with webpack 2
 
-let libraryName = 'unsplash-source-es';
+let libraryName = 'unsplash-source-es6';
 
 let plugins = [], outputFile;
 
