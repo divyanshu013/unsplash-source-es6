@@ -1,9 +1,11 @@
 class UnsplashSourceES6 {
   constructor() {
-    this._name = 'UnsplashSourceES6';
+    this.url = 'https://source.unsplash.com';
   }
-  get name() {
-    return this._name;
+
+  // get the Image URL
+  getURL() {
+    return this.url;
   }
 }
 
