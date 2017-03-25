@@ -45,7 +45,7 @@ class UnsplashSourceES6 {
   // get the Image URL
   getURL() {
     if (this.photoId) {
-      this.url += '/' + this.photoId;
+      this.url += `/${this.photoId}`;
     }
     else if (this.section) {
       this.url += `/category/${this.section}`;
