@@ -1,7 +1,6 @@
 class UnsplashSourceES6 {
   constructor() {
     this.url = 'https://source.unsplash.com';
-    this.user;  // user and likes
     this.collection;
     this.weekly;
     this.daily;
@@ -19,6 +18,13 @@ class UnsplashSourceES6 {
   category(category) {
     // only allowed categories are buildings, food, nature, people, technology, objects
     this.section = category;
+
+    return this;
+  }
+
+  // get random image from a user
+  user(user) {
+    this.username = user;
 
     return this;
   }
@@ -49,6 +55,9 @@ class UnsplashSourceES6 {
     }
     else if (this.section) {
       this.url += `/category/${this.section}`;
+    }
+    else if (this.username) {
+      this.url += `/user/${this.username}`;
     }
     else {
       this.url += '/random';
