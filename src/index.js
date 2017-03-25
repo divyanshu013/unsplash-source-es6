@@ -29,6 +29,14 @@ class UnsplashSourceES6 {
     return this;
   }
 
+  // get a liked image from a user
+  liked(user) {
+    this.username = user;
+    this.likes = true;
+
+    return this;
+  }
+
   // sets the photo dimension, if only one parameter is given, height is taken same as width
   size(width, height = width) {
     this.dimension = {
@@ -58,6 +66,9 @@ class UnsplashSourceES6 {
     }
     else if (this.username) {
       this.url += `/user/${this.username}`;
+      if (this.likes) {
+        this.url += '/likes';
+      }
     }
     else {
       this.url += '/random';
