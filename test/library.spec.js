@@ -2,7 +2,7 @@
 // TODO: Add Tests
 
 import chai from 'chai';
-import UnsplashSourceES6 from '../lib/unsplash-source-es6.js';
+import UnsplashSourceES6 from '../lib/unsplash-source-es6.min.js';
 
 chai.expect();
 
