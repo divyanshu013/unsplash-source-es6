@@ -19,8 +19,10 @@ class UnsplashSourceES6 {
 
   // sets the photo dimension, if only one parameter is given, height is taken same as width
   size(width, height = width) {
-    this.dimension.width = width;
-    this.dimension.height = height;
+    this.dimension = {
+      width: width,
+      height: height
+    };
 
     return this;
   }
