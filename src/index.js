@@ -49,7 +49,7 @@ class UnsplashSourceES6 {
   }
 
   // get the Image URL
-  getURL() {
+  fetch() {
     if (this.photoId) {
       this.url += `/${this.photoId}`;
     }
