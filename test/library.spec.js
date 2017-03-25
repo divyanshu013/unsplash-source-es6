@@ -45,4 +45,17 @@ describe('Given an instance of unsplash-source-es6', () => {
       expect(lib.id('some-id').size(1980).getURL()).to.be.equal('https://source.unsplash.com/some-id/1980x1980');
     });
   });
+
+  describe('when called category("technology").getURL()', () => {
+    it('should return the URL for the category', () => {
+      expect(lib.category('technology').getURL()).to.be.equal('https://source.unsplash.com/category/technology');
+    });
+  });
+
+  describe('when called category("technology").size(1980, 1080).getURL()', () => {
+    it('should return the URL for the category with added dimenstions', () => {
+      expect(lib.category('technology').size(1980, 1080).getURL())
+        .to.be.equal('https://source.unsplash.com/category/technology/1980x1080');
+    });
+  });
 });
