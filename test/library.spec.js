@@ -53,9 +53,22 @@ describe('Given an instance of unsplash-source-es6', () => {
   });
 
   describe('when called category("technology").size(1980, 1080).getURL()', () => {
-    it('should return the URL for the category with added dimenstions', () => {
+    it('should return the URL for the category with added dimensions', () => {
       expect(lib.category('technology').size(1980, 1080).getURL())
         .to.be.equal('https://source.unsplash.com/category/technology/1980x1080');
+    });
+  });
+
+  describe('when called user("divyanshu013").getURL()', () => {
+    it('should return the URL for the username', () => {
+      expect(lib.user('divyanshu013').getURL()).to.be.equal('https://source.unsplash.com/user/divyanshu013');
+    });
+  });
+
+  describe('when called user("divyanshu013").size(1980, 1080).getURL()', () => {
+    it('should return the URL for the username with added dimensions', () => {
+      expect(lib.user('divyanshu013').size(1980, 1080).getURL())
+        .to.be.equal('https://source.unsplash.com/user/divyanshu013/1980x1080');
     });
   });
 });
