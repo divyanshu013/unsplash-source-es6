@@ -71,4 +71,17 @@ describe('Given an instance of unsplash-source-es6', () => {
         .to.be.equal('https://source.unsplash.com/user/divyanshu013/1980x1080');
     });
   });
+
+  describe('when called liked("divyanshu013").fetch()', () => {
+    it('should return the URL for a liked image by username', () => {
+      expect(lib.liked('divyanshu013').fetch()).to.be.equal('https://source.unsplash.com/user/divyanshu013/likes');
+    });
+  });
+
+  describe('when called liked("divyanshu013").size(1980, 1080).fetch()', () => {
+    it('should return the URL for a liked image by username with added dimensions', () => {
+      expect(lib.liked('divyanshu013').size(1980, 1080).fetch())
+        .to.be.equal('https://source.unsplash.com/user/divyanshu013/likes/1980x1080');
+    });
+  });
 });
