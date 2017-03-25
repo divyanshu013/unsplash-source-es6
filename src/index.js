@@ -1,18 +1,24 @@
 class UnsplashSourceES6 {
   constructor() {
     this.url = 'https://source.unsplash.com';
-    this.category;
     this.user;  // user and likes
     this.collection;
     this.weekly;
     this.daily;
     this.search;  // ?term or ?term1,term2
-    this.specifiphoto;
   }
 
   // get Image by its ID
   id(photoId) {
     this.photoId = photoId;
+
+    return this;
+  }
+
+  // get image by category
+  category(category) {
+    // only allowed categories are buildings, food, nature, people, technology, objects
+    this.section = category;
 
     return this;
   }
@@ -40,6 +46,9 @@ class UnsplashSourceES6 {
   getURL() {
     if (this.photoId) {
       this.url += '/' + this.photoId;
+    }
+    else if (this.section) {
+      this.url += `/category/${this.section}`;
     }
     else {
       this.url += '/random';
