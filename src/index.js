@@ -37,6 +37,13 @@ class UnsplashSourceES6 {
     return this;
   }
 
+  // get a random image from a collection
+  collection(collectionId) {
+    this.collectionId = collectionId;
+
+    return this;
+  }
+
   // sets the photo dimension, if only one parameter is given, height is taken same as width
   size(width, height = width) {
     this.dimension = {
@@ -69,6 +76,9 @@ class UnsplashSourceES6 {
       if (this.likes) {
         this.url += '/likes';
       }
+    }
+    else if (this.collectionId) {
+      this.url += `/collection/${this.collectionId}`;
     }
     else {
       this.url += '/random';
