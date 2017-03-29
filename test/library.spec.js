@@ -1,6 +1,3 @@
-/* global describe, it, before */
-// TODO: Add Tests
-
 import chai from 'chai';
 import UnsplashSourceES6 from '../lib/unsplash-source-es6.min.js';
 
@@ -22,6 +19,18 @@ describe('Given an instance of unsplash-source-es6', () => {
     });
   });
 
+  describe('when called search(["music"]).fetch()', () => {
+    it('should return the random URL with added tag', () => {
+      expect(lib.search(['music']).fetch()).to.be.equal('https://source.unsplash.com/random/?music');
+    });
+  });
+
+  describe('when called search(["music", "guitar"]).fetch()', () => {
+    it('should return the random URL with added tags', () => {
+      expect(lib.search(['music', 'guitar']).fetch()).to.be.equal('https://source.unsplash.com/random/?music,guitar');
+    });
+  });
+
   describe('when called frequency("unknown-frequency").fetch() only', () => {
     it('should return the random URL without adding frequency', () => {
       expect(lib.frequency('xyz').fetch()).to.be.equal('https://source.unsplash.com/random');
@@ -31,6 +40,13 @@ describe('Given an instance of unsplash-source-es6', () => {
   describe('when called size(1980, 1080).fetch()', () => {
     it('should return the random URL with added resolution', () => {
       expect(lib.size(1980, 1080).fetch()).to.be.equal('https://source.unsplash.com/random/1980x1080');
+    });
+  });
+
+  describe('when called search(["music", "guitar"]).size(1980, 1080).fetch()', () => {
+    it('should return the random URL with added resolution and tags', () => {
+      expect(lib.search(['music', 'guitar']).size(1980, 1080).fetch())
+        .to.be.equal('https://source.unsplash.com/random/1980x1080/?music,guitar');
     });
   });
 
@@ -78,6 +94,13 @@ describe('Given an instance of unsplash-source-es6', () => {
     });
   });
 
+  describe('when called search(["music"]).category("technology").size(1980, 1080).fetch()', () => {
+    it('should return the URL for the category with added dimensions and tag', () => {
+      expect(lib.category('technology').search(['music']).size(1980, 1080).fetch())
+        .to.be.equal('https://source.unsplash.com/category/technology/1980x1080/?music');
+    });
+  });
+
   describe('when called category("technology").size(1980, 1080).frequency("daily").fetch()', () => {
     it('should return the URL for the category with added dimensions and frequency', () => {
       expect(lib.category('technology').size(1980, 1080).frequency('daily').fetch())
@@ -95,6 +118,13 @@ describe('Given an instance of unsplash-source-es6', () => {
     it('should return the URL for the username with added dimensions', () => {
       expect(lib.user('divyanshu013').size(1980, 1080).fetch())
         .to.be.equal('https://source.unsplash.com/user/divyanshu013/1980x1080');
+    });
+  });
+
+  describe('when called user("divyanshu013").search(["music", "guitar"]).size(1980, 1080).fetch()', () => {
+    it('should return the URL for the username with added dimensions and tags', () => {
+      expect(lib.user('divyanshu013').search(['music', 'guitar']).size(1980, 1080).fetch())
+        .to.be.equal('https://source.unsplash.com/user/divyanshu013/1980x1080/?music,guitar');
     });
   });
 

@@ -1,7 +1,6 @@
 class UnsplashSourceES6 {
   constructor() {
     this.url = 'https://source.unsplash.com';
-    this.search;  // ?term or ?term1,term2
   }
 
   // get Image by its ID
@@ -63,6 +62,19 @@ class UnsplashSourceES6 {
     return this;
   }
 
+  // adds search tags
+  search(tags) {
+    // using spread operator so that the API can't accidentally modify the passed array object
+    if (Array.isArray(tags)) {
+      this.tags = [...tags];
+    }
+    else {
+      console.error('search() API expects array');
+    }
+
+    return this;
+  }
+
   // add this.dimension (dimensions) to the url
   _addDimensions() {
     if (this.hasOwnProperty('dimension')) {
@@ -77,6 +89,19 @@ class UnsplashSourceES6 {
     if (this.freq) {
       this.url += `/${this.freq}`;
     }
+
+    return this;
+  }
+
+  // adds the tags from the array to the end of url
+  _addTags() {
+    if (this.tags) {
+      this.url += '/?' + this.tags.reduce(
+        (all, tag) => `${all},${tag}`
+      );
+    }
+
+    return this;
   }
 
   // get the Image URL
@@ -101,6 +126,8 @@ class UnsplashSourceES6 {
     }
     this._addDimensions();
     this._addFreq();
+    this._addTags();
+
     return this.url;
   }
 }
