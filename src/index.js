@@ -1,9 +1,6 @@
 class UnsplashSourceES6 {
   constructor() {
     this.url = 'https://source.unsplash.com';
-    this.collection;
-    this.weekly;
-    this.daily;
     this.search;  // ?term or ?term1,term2
   }
 
@@ -54,6 +51,18 @@ class UnsplashSourceES6 {
     return this;
   }
 
+  // sets the change frequency of image
+  frequency(freq) {
+    if (freq === 'daily' || freq === 'weekly') {
+      this.freq = freq;
+    }
+    else {
+      console.error(`Unsplash allows frequency to be 'daily' or 'weekly' only, found ${freq}`);
+    }
+
+    return this;
+  }
+
   // add this.dimension (dimensions) to the url
   _addDimensions() {
     if (this.hasOwnProperty('dimension')) {
@@ -61,6 +70,13 @@ class UnsplashSourceES6 {
     }
 
     return this;
+  }
+
+  // adds this.freq to the url
+  _addFreq() {
+    if (this.freq) {
+      this.url += `/${this.freq}`;
+    }
   }
 
   // get the Image URL
@@ -84,6 +100,7 @@ class UnsplashSourceES6 {
       this.url += '/random';
     }
     this._addDimensions();
+    this._addFreq();
     return this.url;
   }
 }
