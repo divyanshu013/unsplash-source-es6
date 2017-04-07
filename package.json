@@ -1,6 +1,6 @@
 {
   "name": "unsplash-source-es6",
-  "version": "1.1.1",
+  "version": "1.2.1",
   "description": "A minimal ES6 ready Javascript wrapper for Unsplash Source API https://source.unsplash.com/",
   "main": "lib/unsplash-source-es6.js",
   "scripts": {
