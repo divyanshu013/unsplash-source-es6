@@ -43,6 +43,54 @@ let unsplash = new UnsplashSourceES6();
 
 This object can be used for various API calls.
 
+## API examples
+
+You can easily chain different API calls to suit your needs in any order as long as you call `fetch()` at the end of the chain to get the correct image url. Here are a few use cases:
+
+Simply a random image:
+
+```javascript
+unsplash.fetch();
+```
+
+Simply a random image:
+
+```javascript
+unsplash.fetch();
+```
+
+A random image in particular dimensions *1980x1080 here*:
+
+```javascript
+unsplash.size(1980, 1080).fetch();
+```
+
+A random image related to *music* and *guitar*:
+
+```javascript
+unsplash.search(['music', 'guitar']).fetch();
+```
+
+An image which changes daily in particular dimensions:
+
+```javascript
+unsplash.frequency('daily').size(1980, 1080).fetch();
+```
+
+A liked image by a user in particular dimensions:
+
+```javascript
+unsplash.liked('divyanshu013').size(1980, 1080).fetch();
+```
+
+An image from a category further filtered for the provided tag(s) in particular dimensions:
+
+```javascript
+unsplash.category('technology').search(['music']).size(1980, 1080).fetch();
+```
+
+Many other combinations are possible with the below mentioned APIs, happy hacking! :smiley_cat:
+
 ## APIs
 
 In order to **fetch** the **url** you can chain methods in any order but remember to call `fetch()` at the end of method chain. The `fetch()` call will return the **url** which you can use in your own preferred way such as by using the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) which returns a promise.
