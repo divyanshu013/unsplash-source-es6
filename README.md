@@ -1,5 +1,7 @@
 # Unsplash Source ES6
 [![Build Status](https://travis-ci.org/divyanshu013/unsplash-source-es6.svg?branch=master)](https://travis-ci.org/divyanshu013/unsplash-source-es6)
+[![npm](https://img.shields.io/npm/v/unsplash-source-es6.svg)]()
+[![npm](https://img.shields.io/npm/dt/unsplash-source-es6.svg)]()
 
 A minimal ES6 ready Javascript wrapper for Unsplash Source API https://source.unsplash.com/ :camera:
 
