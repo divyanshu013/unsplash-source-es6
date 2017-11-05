@@ -183,3 +183,7 @@ yarn test:watch
 ```
 
 When adding new functionality to the library tests are run from `/test/library.spec.js`.
+
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/q3xjLpkNtemt4AX1d12QE6Vi/divyanshu013/unsplash-source-es6'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/q3xjLpkNtemt4AX1d12QE6Vi/divyanshu013/unsplash-source-es6.svg' />
+</a>
